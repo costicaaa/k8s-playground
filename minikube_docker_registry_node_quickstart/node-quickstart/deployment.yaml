@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-quickstart
+  labels:
+    app: node-quickstart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-quickstart
+  template:
+    metadata:
+      labels:
+        app: node-quickstart
+    spec:
+      containers:
+        - image: 192.168.64.12:31958/node-quickstart
+          name: node-quickstart
+          ports:
+            - containerPort: 7007

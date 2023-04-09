@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: docker-registry-service
+  labels:
+    service-name: docker-registry-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: docker-registry
+  ports:
+    - port: 5000
+      protocol: TCP
+      targetPort: 5000
